@@ -1,0 +1,184 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Apollo",
+    "description": "API para realizar as operações como criar, ler, pesquisar e deletar produtos",
+    "termsOfService": "http://localhost:3333/terms",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3333/v1",
+      "description": "API de teste"
+    }
+  ],
+  "paths": {
+    "/product": {
+      "post": {
+        "summary": "Cadastro de produto",
+        "description": "Rota responsável para cadastrar novo produto",
+        "tags": ["product"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewProduct"
+              },
+              "examples": {
+                "ProductPost": {
+                  "value": {
+                    "name": "Iphone 10",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    "color": "prata",
+                    "productCategory": "Smartphones",
+                    "price": "3.00"
+                  }
+                },
+                "ProductPostError": {
+                  "value": {
+                    "name": "Iphone 10",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    "color": "prata",
+                    "productCategory": "Smartphones",
+                    "price": ""
+                  }
+                },
+                "ProductPostEmpty": {
+                  "value": {
+                    "name": "",
+                    "description": "",
+                    "color": "",
+                    "productCategory": "",
+                    "price": ""
+                  }
+                },
+                "SecondEventPost": {
+                  "value": {
+                    "name": "Macbook",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    "color": "branco",
+                    "productCategory": "Electronics",
+                    "price": "3000.00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "summary": "Listagem de produtos",
+        "description": "Rota responsável por listar produtos e/ou buscar produtos pelo nome ou tipo do produto",
+        "tags": ["Product"],
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Nome ou tipo do produto para a pesquisa",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/{id}": {
+      "delete": {
+        "summary": "Deletar produto",
+        "description": "Rota responsável por deletar produto",
+        "tags": ["product"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "_id do produto",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "NewProduct": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "productCategory": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          }
+        }
+      },
+      "Product": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "promotionalPrice": {
+            "type": "number"
+          },
+          "productCategory": {
+            "type": "number"
+          },
+          "_id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
