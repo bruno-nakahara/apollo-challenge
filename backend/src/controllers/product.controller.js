@@ -5,11 +5,11 @@ const createProduct = async (req, res) => {
     const productCreated = await create(req.body);
 
     if (!!productCreated?._id) {
-      return res.status(201).json({ message: 'Produto criado com sucesso' });
+      return res.status(201).json({ message: 'Product created!' });
     }
   } catch (error) {
     console.error(error);
-    return res.status(400).json({ message: 'Falha ao tentar criar produto' });
+    return res.status(400).json({ message: 'Error, failed to create product' });
   }
 };
 
@@ -22,22 +22,23 @@ const getProducts = async (req, res) => {
     return res.status(200).json(products);
   } catch (error) {
     console.error(error);
-    return res.status(400).json({ message: 'Falha ao tentar buscar produtos' });
+    return res.status(400).json({ message: 'Error, failed to get products' });
   }
 };
 
 const deleteProduct = async (req, res) => {
   const { id } = req.params;
+
   try {
     const productDeleted = await remove(id);
 
     if (!productDeleted)
-      return res.status(404).json({ message: 'Erro, produto não encontrado.' });
+      return res.status(404).json({ message: 'Error, product not found' });
 
-    return res.status(200).json({ message: 'Produto deletado com sucesso' });
+    return res.status(200).json({ message: 'Product deleted!' });
   } catch (error) {
     console.error(error);
-    return res.status(400).json({ message: 'Falha ao tentar deletar produto' });
+    return res.status(400).json({ message: 'Error, failed to delete product' });
   }
 };
 

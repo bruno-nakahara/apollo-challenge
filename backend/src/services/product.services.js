@@ -19,6 +19,7 @@ const create = async data => {
 
   return await ProductModel.create({
     ...data,
+    price: data.price.toFixed(2),
     promotionalPrice: productPromotionalPrice.toFixed(2),
   });
 };
