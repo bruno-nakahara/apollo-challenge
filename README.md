@@ -22,7 +22,7 @@
 <h2>Instalação e uso</h2>
 
 <h3>Requisitos</h3>
-<p>No seu computador tem que ter o <a href="https://nodejs.org/pt-br/download/](https://nodejs.org/en/download">Node</a> e o <a href="https://www.mongodb.com/try/download/community">MongoDB</a> instalado.</p>
+<p>No seu computador tem que ter o <a href="https://nodejs.org/en/download">Node</a> e o <a href="https://www.mongodb.com/try/download/community">MongoDB</a> instalado.</p>
 
 <p>Cria uma pasta onde irá baixar os códigos. Após criar a pasta siga os passos abaixo:</p>
 
