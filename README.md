@@ -64,7 +64,7 @@ $ npm run dev
 
 <p>1 - What would be your first improvements if you had more implementation time?</p>
 
-<p>No frontend adicionaria documentação(storybook e etc.) e teste para melhorar a segurança na hora do desenvolvimento. Para o backend adicionaria um crud da tabela de categoria do produto, pois se acontecer alguma alteração no valor de desconto oos produtos novos vão utilizar os valores atualizados.</p>
+<p>No frontend adicionaria documentação(storybook e etc.) e teste para melhorar a segurança na hora do desenvolvimento. Para o backend adicionaria um crud da tabela de categoria do produto, pois se acontecer alguma alteração no valor de desconto os produtos novos vão utilizar os valores atualizados.</p>
 
 <p>2 - Thinking about your solution, how would maintenance be in case of adding new product categories? What would need to be changed?</p>
 
