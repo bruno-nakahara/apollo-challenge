@@ -72,4 +72,4 @@ $ npm run dev
 
 <p>3 - What changes would need to be made to support updates in the product category's discount percentage so that whenever the discount percentage was changed, the new price would be reflected in all products of the same category?</p>
 
-<p>Na hora de atualizar o valor do desconto da categoria do produto, na mesma operação atualizar o valor do preço de cada produto com a mesma categoria. Ou criar um script que roda algumas vezes durante o dia/semana/mês, vai depender da frequência de atualização do valor, para atualizar o valor do preço.</p>
+<p>Na hora de atualizar o valor do desconto da categoria do produto, na mesma operação atualizar o valor do preço de cada produto com a mesma categoria. Ou criar um script que roda algumas vezes durante o dia/semana/mês, vai depender da frequência de atualização do valor, para atualizar o valor do preço produto.</p>
