@@ -56,8 +56,6 @@ $ npm run dev
 
 ```
 
-<p>Na aplicação do backend </p>
-
 <p>Se no backend não está utilizando a porta 3333 para rodar a aplicação, vá até a pasta frontend/src/config e modifica a porta da API_BASE_URL do arquivo env.ts.</p>
 
 <p>Respondendo as perguntas do teste:</p>
