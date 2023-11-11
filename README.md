@@ -40,7 +40,7 @@ $ cd backend
 
 # Se entrou na pasta do backend crie um arquivo .env e adicione os dados a seguir
 $ PORT=3333
-$ MONGO_DB_URL=mongodb+srv://test:test123@cluster0.j6pmsu4.mongodb.net/?retryWrites=true&w=majority
+$ MONGO_DB_URL=xxxxxxxx
 
 # Já foi criado uma conta teste no MongoDB para ser usado na avaliação
 
